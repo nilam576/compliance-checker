@@ -14,7 +14,7 @@ def return_api_key():
 
 def summarize_with_gemini(text: str, lang: str) -> str:
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-3-pro-preview")
         prompt = f"""
         You are an advanced text analysis system. Your task is to carefully read and process the following text, 
         then produce a comprehensive, structured output in JSON format.

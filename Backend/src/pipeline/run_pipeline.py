@@ -13,7 +13,6 @@ from src.Email_Sender.risk_eval import is_high_risk
 from src.Email_Sender.notification_worker import notification_worker
 
 from src.analytics.analytics_api import router as analytics_router
-from src.analytics.analytics_api import router as analytics_router
 import traceback
 import re
 import json
@@ -1529,7 +1528,7 @@ async def voice_interact(file: UploadFile = File(...), document_id: Optional[str
             api_key = os.getenv("GEMINI_API_KEY_2") # Fallback
         
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-3-pro-preview")
         
         context = ""
         if document_id:
@@ -1601,7 +1600,7 @@ async def get_document_briefing(document_id: str):
             api_key = os.getenv("GEMINI_API_KEY_2")
             
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-2.5-flash")
+        model = genai.GenerativeModel("gemini-3-pro-preview")
         
         briefing_response = model.generate_content(script_prompt)
         briefing_script = briefing_response.text
@@ -1659,11 +1658,27 @@ async def generate_video_briefing(document_id: str):
             draw.rectangle([40, 40, 1240, 680], outline=(16, 185, 129), width=10) # Emerald 500 border
             
             # Text rendering (simple fallback if fonts missing)
-            try:
-                # In most linux containers, fonts are in /usr/share/fonts
-                font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 60)
-                font_body = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 30)
-            except:
+            # Fallback font paths for different environments
+            font_paths = [
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+                "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+                "/usr/share/fonts/TTF/DejaVuSans.ttf",
+                "C:\\Windows\\Fonts\\arial.ttf" # Local testing fallback
+            ]
+            
+            font_title = None
+            font_body = None
+            
+            for path in font_paths:
+                try:
+                    if os.path.exists(path):
+                        font_title = ImageFont.truetype(path, 60)
+                        font_body = ImageFont.truetype(path, 30)
+                        break
+                except:
+                    continue
+                    
+            if not font_title:
                 font_title = ImageFont.load_default()
                 font_body = ImageFont.load_default()
                 

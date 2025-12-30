@@ -27,7 +27,7 @@ class VertexAIVerifier:
         """
         self.project_id = project_id or os.getenv("GCP_PROJECT_ID", "reglex-ai")
         self.location = location
-        self.model_name = "gemini-1.5-pro"
+        self.model_name = "gemini-3-pro-preview"
         
         # Initialize Vertex AI
         try:

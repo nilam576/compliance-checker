@@ -21,7 +21,7 @@ def verify_with_gemini(system_prompt: str, user_prompt: str) -> dict:
         dict: The verification result from the LLM.
     """
     genai.configure(api_key=os.getenv("GEMINI_API_KEY_2"))
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    model = genai.GenerativeModel("gemini-3-pro-preview")
     response = model.generate_content(system_prompt + "\n" + user_prompt)
     raw = response.text
     return safe_json_response(raw)

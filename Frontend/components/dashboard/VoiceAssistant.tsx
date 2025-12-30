@@ -131,10 +131,15 @@ export function VoiceAssistant({ documentId }: VoiceAssistantProps) {
     return (
         <Card className="bg-slate-900 border-slate-800 text-white shadow-2xl overflow-hidden">
             <CardHeader className="border-b border-slate-800 bg-slate-900/50 backdrop-blur-sm">
-                <CardTitle className="flex items-center gap-2 text-xl">
-                    <ShieldCheck className="text-emerald-500 h-6 w-6" />
-                    RegLex Voice Assistant
-                    {isPlaying && <Volume2 className="h-5 w-5 text-emerald-500 animate-pulse ml-2" />}
+                <CardTitle className="flex items-center justify-between text-xl">
+                    <div className="flex items-center gap-2">
+                        <ShieldCheck className="text-emerald-500 h-6 w-6" />
+                        RegLex Voice Assistant
+                        {isPlaying && <Volume2 className="h-5 w-5 text-emerald-500 animate-pulse ml-2" />}
+                    </div>
+                    <Badge variant="outline" className="text-[10px] uppercase tracking-wider text-slate-400 border-slate-700">
+                        Gemini 3 Pro
+                    </Badge>
                 </CardTitle>
             </CardHeader>
             <CardContent className="p-6">

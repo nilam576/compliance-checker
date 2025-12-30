@@ -32,8 +32,8 @@ export const cspConfig = {
   ],
   'connect-src': [
     "'self'",
-    'https://reglex-backend-127310351608.us-central1.run.app',
-    process.env.NEXT_PUBLIC_API_URL || 'https://reglex-backend-127310351608.us-central1.run.app',
+    'https://reglex-backend-305534435339.us-central1.run.app',
+    process.env.NEXT_PUBLIC_API_URL || 'https://reglex-backend-305534435339.us-central1.run.app',
     'http://localhost:8000', // For local development only
     'http://127.0.0.1:8000', // For local development only
     'https://*.run.app', // Allow all Cloud Run services
@@ -104,7 +104,7 @@ export const securityHeaders = {
   // Permissions Policy (formerly Feature Policy)
   'Permissions-Policy': [
     'geolocation=()',
-    'microphone=()',
+    'microphone=(self)',
     'camera=()',
     'payment=()',
     'usb=()',
@@ -113,10 +113,10 @@ export const securityHeaders = {
     'accelerometer=()',
   ].join(', '),
 
-  // Cross-Origin Policies
-  'Cross-Origin-Embedder-Policy': 'require-corp',
+  // Cross-Origin Policies - Relaxed for hackathon to allow external media (GCS)
+  'Cross-Origin-Embedder-Policy': 'unsafe-none',
   'Cross-Origin-Opener-Policy': 'same-origin',
-  'Cross-Origin-Resource-Policy': 'same-origin',
+  'Cross-Origin-Resource-Policy': 'cross-origin',
 }
 
 // Input validation and sanitization

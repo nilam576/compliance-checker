@@ -3,13 +3,15 @@
 **Live Demo**: [https://reglex-frontend-305534435339.us-central1.run.app](https://reglex-frontend-305534435339.us-central1.run.app)  
 **Backend API**: [https://reglex-backend-305534435339.us-central1.run.app](https://reglex-backend-305534435339.us-central1.run.app)
 
-RegLex is a production-grade, multi-agent AI platform designed to automate and streamline compliance verification for legal documents against SEBI (Securities and Exchange Board of India) regulations. Built for high-stakes financial environments, RegLex combines Gemini 1.5 Pro with **ElevenLabs Voice Intelligence** to provide a comprehensive compliance command center.
+> **Note**: For the hackathon demonstration, authentication has been bypassed (via `NEXT_PUBLIC_SKIP_AUTH=true`) to allow instant access to the dashboard.
+
+RegLex is a production-grade, multi-agent AI platform designed to automate and streamline compliance verification for legal documents against SEBI (Securities and Exchange Board of India) regulations. Built for high-stakes financial environments, RegLex combines **Gemini 3 Pro Preview** with **ElevenLabs Voice Intelligence** to provide a comprehensive compliance command center.
 
 ## 🚀 Key Features
 
 ### 1. **Autonomous Compliance Engine**
 - **Document Analysis**: Upload PDF agreements for instant extraction and analysis.
-- **SEBI Guard**: Verifies clauses against a vector database of updated SEBI regulations using Gemini 1.5 Pro.
+- **SEBI Guard**: Verifies clauses against a vector database of updated SEBI regulations using Gemini 3 Pro Preview.
 - **Risk Scoring**: Provides a quantitative compliance score and flags high-risk violations with detailed rationales.
 
 ### 2. **AI Voice & Video Intelligence (ElevenLabs Integration)**
@@ -31,7 +33,7 @@ RegLex is a production-grade, multi-agent AI platform designed to automate and s
 
 - **Frontend**: Next.js 14, React, Tailwind CSS, Framer Motion, Lucide Icons.
 - **Backend**: FastAPI (Python), Uvicorn.
-- **AI/ML**: Google Gemini 1.5 Pro, ElevenLabs (Scribe & TTS), FFmpeg (Video Synthesis).
+- **AI/ML**: Google Gemini 3 Pro Preview, ElevenLabs (Scribe & TTS), FFmpeg (Video Synthesis).
 - **Data/Storage**: Google Cloud Storage (GCS), BigQuery, FAISS (Vector DB).
 - **Infrastructure**: Google Cloud Run, Docker.
 

@@ -8,6 +8,8 @@ steps:
       - 'NEXT_PUBLIC_API_URL=${_NEXT_PUBLIC_API_URL}'
       - '--build-arg'
       - 'NEXT_PUBLIC_USE_MOCK_API=false'
+      - '--build-arg'
+      - 'NEXT_PUBLIC_SKIP_AUTH=true'
       - '.'
 
 images:

@@ -22,8 +22,8 @@ interface LLMProvider {
 const llmProviders: LLMProvider[] = [
   {
     id: 'gemini',
-    name: 'Google Gemini',
-    description: 'Advanced reasoning and multimodal capabilities',
+    name: 'Google Gemini 3 Pro Preview',
+    description: 'Next-generation reasoning and multimodal capabilities',
     status: 'available',
     icon: <Sparkles className="h-5 w-5" />,
     features: ['Fast Processing', 'High Accuracy', 'Cost Effective'],
@@ -106,8 +106,8 @@ export function LLMProviderSelector({
               </SelectTrigger>
               <SelectContent>
                 {llmProviders.map((provider) => (
-                  <SelectItem 
-                    key={provider.id} 
+                  <SelectItem
+                    key={provider.id}
                     value={provider.id}
                     disabled={provider.status === 'unavailable'}
                   >
@@ -135,14 +135,14 @@ export function LLMProviderSelector({
               <div className="flex items-center gap-2">
                 {selectedProviderData.icon}
                 <h3 className="font-semibold">{selectedProviderData.name}</h3>
-                <Badge 
+                <Badge
                   variant={selectedProviderData.status === 'available' ? 'success' : 'warning'}
                   className="text-xs"
                 >
                   {selectedProviderData.status}
                 </Badge>
               </div>
-              
+
               <p className="text-sm text-muted-foreground">
                 {selectedProviderData.description}
               </p>

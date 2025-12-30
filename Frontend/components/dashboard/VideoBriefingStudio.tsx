@@ -62,7 +62,7 @@ export function VideoBriefingStudio({ documents }: VideoBriefingStudioProps) {
                 <CardTitle className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-purple-500" />
                     AI Video Briefing Studio
-                    <Badge variant="outline" className="ml-2 text-[10px] uppercase tracking-wider">Experimental</Badge>
+                    <Badge variant="outline" className="ml-2 text-[10px] uppercase tracking-wider text-purple-400 border-purple-800">Gemini 3 Pro</Badge>
                 </CardTitle>
             </CardHeader>
             <CardContent className="p-6">

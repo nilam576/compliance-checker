@@ -51,9 +51,9 @@ export default function LandingPage() {
       description: "Choose from Claude, Gemini, OpenAI, and Mistral for robust compliance verification with fallback capabilities. Our ensemble approach ensures comprehensive analysis even when individual models have limitations.",
       badge: "AI-Powered",
       details: [
+        "Gemini 3 Pro Preview for future-proof analysis",
         "Claude 3.5 Sonnet for nuanced legal interpretation",
-        "Gemini Pro for contextual understanding",
-        "GPT-4 for broad knowledge base",
+        "GPT-4o for broad knowledge base",
         "Mistral Large for cost-effective processing"
       ]
     },
@@ -63,7 +63,7 @@ export default function LandingPage() {
       description: "Automatically transform dry compliance documents into engaging 'News Style' video briefings powered by Gemini and ElevenLabs Narrations.",
       badge: "Hackathon Win",
       details: [
-        "Automated AI script writing by Gemini 1.5 Pro",
+        "Automated AI script writing by Gemini 3 Pro Preview",
         "Professional voiceovers with ElevenLabs TTS",
         "Dynamic background generation with Pillow",
         "Automated MP4 synthesis using FFmpeg"
