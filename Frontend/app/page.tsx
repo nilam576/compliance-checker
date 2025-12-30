@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { PageLoader } from '@/components/ui/loading-spinner'
-import { 
-  ShieldCheck, 
-  Brain, 
-  Search, 
-  BarChart3, 
-  Upload, 
+import {
+  ShieldCheck,
+  Brain,
+  Search,
+  BarChart3,
+  Upload,
   Zap,
   ArrowRight,
   FileText,
@@ -24,7 +24,9 @@ import {
   Layers,
   TrendingUp,
   Sparkles,
-  Shield
+  Shield,
+  Video,
+  Mic
 } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
@@ -53,6 +55,30 @@ export default function LandingPage() {
         "Gemini Pro for contextual understanding",
         "GPT-4 for broad knowledge base",
         "Mistral Large for cost-effective processing"
+      ]
+    },
+    {
+      icon: <Video className="h-8 w-8 text-purple-600" />,
+      title: "AI Video Intelligence",
+      description: "Automatically transform dry compliance documents into engaging 'News Style' video briefings powered by Gemini and ElevenLabs Narrations.",
+      badge: "Hackathon Win",
+      details: [
+        "Automated AI script writing by Gemini 1.5 Pro",
+        "Professional voiceovers with ElevenLabs TTS",
+        "Dynamic background generation with Pillow",
+        "Automated MP4 synthesis using FFmpeg"
+      ]
+    },
+    {
+      icon: <Mic className="h-8 w-8 text-emerald-600" />,
+      title: "Voice-First Interaction",
+      description: "Talk to your compliance data. Our Interactive Voice Assistant uses ElevenLabs Scribe for ultra-low latency speech-to-compliance analysis.",
+      badge: "Next-Gen",
+      details: [
+        "ElevenLabs Scribe for high-accuracy transcription",
+        "Voice-to-Compliance conversational loop",
+        "Interactive executive summary playback",
+        "Hands-free regulatory consultation"
       ]
     },
     {
@@ -168,11 +194,11 @@ export default function LandingPage() {
       <div className="container mx-auto px-4 py-16 md:py-24 relative">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '-2s'}}></div>
-          <div className="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{animationDelay: '-4s'}}></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '-2s' }}></div>
+          <div className="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '-4s' }}></div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="max-w-6xl mx-auto text-center relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -192,8 +218,8 @@ export default function LandingPage() {
               <Sparkles className="h-4 w-4 text-purple-500" />
             </div>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,18 +233,18 @@ export default function LandingPage() {
               Compliance Verification
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Transform your legal document verification process with our multi-LLM AI system. 
+            Transform your legal document verification process with our multi-LLM AI system.
             Get comprehensive SEBI compliance analysis in seconds, not hours.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -230,15 +256,15 @@ export default function LandingPage() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            
+
             <Link href="#features">
               <Button variant="outline" size="lg" className="glass-button text-lg px-10 py-6 hover:shadow-2xl transition-all duration-300">
                 Explore Features
               </Button>
             </Link>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className="glass-card p-6 max-w-5xl mx-auto overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -276,13 +302,13 @@ export default function LandingPage() {
       </div>
 
       {/* Bento Grid Features Section */}
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-24 relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -295,14 +321,13 @@ export default function LandingPage() {
             Experience the future of legal compliance with our intelligent verification system
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              className={`p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${
-                index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
-              }`}
+              className={`p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
+                }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -316,7 +341,7 @@ export default function LandingPage() {
                   {benefit.statistic}
                 </Badge>
               </div>
-              
+
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {benefit.title}
@@ -325,7 +350,7 @@ export default function LandingPage() {
                   {benefit.description}
                 </p>
               </div>
-              
+
               {index === 0 && (
                 <div className="mt-4 space-y-2">
                   <div className="flex items-center justify-between text-sm">
@@ -337,7 +362,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               )}
-              
+
               {index === 3 && (
                 <div className="mt-4 grid grid-cols-3 gap-2">
                   <div className="p-2 text-center bg-gray-50 dark:bg-gray-800/50 rounded-lg">
@@ -360,14 +385,14 @@ export default function LandingPage() {
       </motion.div>
 
       {/* Advanced Features Bento Grid */}
-      <motion.div 
-        id="features" 
+      <motion.div
+        id="features"
         className="container mx-auto px-4 py-24 relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -380,14 +405,13 @@ export default function LandingPage() {
             Powered by cutting-edge AI models and legal expertise
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className={`p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${
-                index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
-              }`}
+              className={`p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm hover:shadow-xl transition-all duration-300 ${index === 0 ? 'md:col-span-2 lg:col-span-2' : ''
+                }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -401,7 +425,7 @@ export default function LandingPage() {
                   {feature.badge}
                 </Badge>
               </div>
-              
+
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {feature.title}
@@ -409,7 +433,7 @@ export default function LandingPage() {
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
                   {feature.description}
                 </p>
-                
+
                 {index === 0 && (
                   <ul className="space-y-2 mt-4">
                     {feature.details.slice(0, 3).map((detail, detailIndex) => (
@@ -421,7 +445,7 @@ export default function LandingPage() {
                   </ul>
                 )}
               </div>
-              
+
               {index === 0 && (
                 <div className="mt-4 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
                   <div className="flex items-center justify-between mb-2">
@@ -454,13 +478,13 @@ export default function LandingPage() {
       </motion.div>
 
       {/* How It Works */}
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-16 bg-gray-50 dark:bg-gray-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -473,8 +497,8 @@ export default function LandingPage() {
             Simple 3-step process to verify your documents
           </p>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -506,13 +530,13 @@ export default function LandingPage() {
       </motion.div>
 
       {/* Detailed Process Section */}
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-16 bg-white dark:bg-gray-900"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <motion.div 
+        <motion.div
           className="max-w-6xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -525,8 +549,8 @@ export default function LandingPage() {
             Our multi-stage verification ensures thorough compliance checking
           </p>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="grid lg:grid-cols-2 gap-12 items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -547,7 +571,7 @@ export default function LandingPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-500 text-white">
@@ -561,7 +585,7 @@ export default function LandingPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
@@ -575,7 +599,7 @@ export default function LandingPage() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="flex">
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center h-12 w-12 rounded-md bg-orange-500 text-white">
@@ -591,7 +615,7 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8">
             <div className="bg-white dark:bg-gray-700 rounded-xl p-6 shadow">
               <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Sample Risk Report</h3>
@@ -605,7 +629,7 @@ export default function LandingPage() {
                     Missing mandatory disclosure for material contracts under SEBI LODR Regulations, Chapter IV, Clause 4.2.1
                   </p>
                 </div>
-                
+
                 <div className="border-l-4 border-yellow-500 pl-4">
                   <div className="flex justify-between">
                     <span className="font-medium text-gray-900 dark:text-white">Compliance Timeline</span>
@@ -615,7 +639,7 @@ export default function LandingPage() {
                     Submission deadline approaching for quarterly compliance certificate - 3 days remaining
                   </p>
                 </div>
-                
+
                 <div className="border-l-4 border-green-500 pl-4">
                   <div className="flex justify-between">
                     <span className="font-medium text-gray-900 dark:text-white">Governance Structure</span>
@@ -632,14 +656,14 @@ export default function LandingPage() {
       </motion.div>
 
       {/* Team Section */}
-      <motion.div 
+      <motion.div
         id="team"
         className="container mx-auto px-4 py-24 bg-gray-50 dark:bg-gray-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div 
+        <motion.div
           className="max-w-4xl mx-auto text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -652,7 +676,7 @@ export default function LandingPage() {
             Legal experts and AI engineers working together to revolutionize compliance
           </p>
         </motion.div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
             {
@@ -718,13 +742,13 @@ export default function LandingPage() {
       </motion.div>
 
       {/* CTA Section */}
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-24 relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <motion.div 
+        <motion.div
           className="glass-card relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -739,16 +763,16 @@ export default function LandingPage() {
             >
               <Sparkles className="h-8 w-8 text-blue-500" />
             </motion.div>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-6">
               Ready to Transform Your Legal Workflow?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Join thousands of legal professionals who've revolutionized their compliance process with our AI-powered platform. 
+              Join thousands of legal professionals who've revolutionized their compliance process with our AI-powered platform.
               Start analyzing documents in seconds, not hours.
             </p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -760,14 +784,14 @@ export default function LandingPage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              
+
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="glass-button px-10 py-6 text-lg hover:shadow-2xl transition-all duration-300">
                   Schedule Demo
                 </Button>
               </Link>
             </motion.div>
-            
+
             <div className="flex justify-center items-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 text-green-500" />
@@ -797,7 +821,7 @@ export default function LandingPage() {
                 <span className="ml-2 text-xl font-bold">SEBI Compliance</span>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                AI-powered legal document compliance verification against SEBI regulations. 
+                AI-powered legal document compliance verification against SEBI regulations.
                 Transform your legal workflow with cutting-edge technology and expert insights.
               </p>
               <div className="flex space-x-4">

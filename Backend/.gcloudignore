@@ -1,0 +1,15 @@
+.git
+.gitignore
+__pycache__/
+venv/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Do not ignore these
+!credentials.json
+!service.json

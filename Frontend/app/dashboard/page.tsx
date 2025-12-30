@@ -412,6 +412,12 @@ export default function DashboardPage() {
         </motion.div>
       </div>
 
+      {/* Voice & Video Intelligence Suite - PROMOTED FOR HACKATHON WOW */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <VoiceAssistant />
+        <VideoBriefingStudio documents={documents || []} />
+      </div>
+
       {/* Overview Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <Card>
@@ -652,16 +658,6 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      {/* Voice & Video Intelligence Suite */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1">
-          <VoiceAssistant />
-        </div>
-
-        <div className="lg:col-span-2">
-          <VideoBriefingStudio documents={documents || []} />
-        </div>
-      </div>
 
       {/* Analytics and Timeline */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
