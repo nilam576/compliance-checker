@@ -9,7 +9,7 @@ RegLex is a production-grade, multi-agent AI platform designed to automate and s
 
 ### 1. **Autonomous Compliance Engine**
 - **Document Analysis**: Upload PDF agreements for instant extraction and analysis.
-- **SEBI Guard**: Verifies clauses against a vector database of updated SEBI regulations using Gemini 1.5 Pro.
+- **SEBI Guard**: Verifies clauses against a vector database of updated SEBI regulations using Gemini 3 Pro.
 - **Risk Scoring**: Provides a quantitative compliance score and flags high-risk violations with detailed rationales.
 
 ### 2. **AI Voice & Video Intelligence (ElevenLabs Integration)**
