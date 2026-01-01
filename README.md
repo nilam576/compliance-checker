@@ -32,10 +32,10 @@ RegLex is a production-grade, multi-agent AI platform designed to automate and s
 ## 🛠️ Tech Stack
 
 - **Frontend**: Next.js 14, React, Tailwind CSS, Framer Motion, Lucide Icons.
-- **Backend**: FastAPI (Python), Uvicorn.
-- **AI/ML**: Google Gemini 3 Pro Preview, ElevenLabs (Scribe & TTS), FFmpeg (Video Synthesis).
-- **Data/Storage**: Google Cloud Storage (GCS), BigQuery, FAISS (Vector DB).
-- **Infrastructure**: Google Cloud Run, Docker.
+- **Backend**: FastAPI (Python), Uvicorn, FFmpeg.
+- **AI/ML**: Google Gemini 3 Pro Preview (Reasoning & Compliance), ElevenLabs (Scribe for STT & Turbo for TTS).
+- **Data/Storage**: Google Cloud Storage (GCS), Elasticsearch (Hybrid Search), FAISS (Vector DB).
+- **Infrastructure**: Google Cloud Run (Serverless), Docker.
 
 ## 🏃 Getting Started
 
@@ -56,9 +56,7 @@ gcloud run deploy reglex-backend --source . --set-env-vars="ELEVENLABS_API_KEY=y
 #### Frontend
 ```bash
 cd Frontend
-npm install
-npm run build
-gcloud run deploy reglex-frontend --source .
+gcloud run deploy reglex-frontend --source . --set-env-vars="NEXT_PUBLIC_API_URL=https://your-backend-url,NEXT_PUBLIC_SKIP_AUTH=true"
 ```
 
 ## 🛡️ Security & Compliance
